@@ -4,6 +4,7 @@ var progress=document.querySelector('rsp-progress');progress.setAttribute('role'
 var newProgress=function(){progress.setAttribute('aria-hidden','false');progress.setAttribute('class','component loading');progress.innerHTML='<div class="bundle"><span class="source"></span></div><div class="module"><span class="source"></span></div>'}
 var delProgress=function(){progress.setAttribute('aria-hidden','true');progress.removeAttribute('class');progress.innerHTML=''}
 var updateProgress=function(percentComplete){progress.setAttribute('aria-valuenow',percentComplete)}
+var shouldServeDefault=function(href){return href.origin===location.origin}
 
 cloudcdn('#app-root',{
     onLoading(){
